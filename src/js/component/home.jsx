@@ -1,24 +1,52 @@
 import React from "react";
+import CentenaDeMil from "./CentenaDeMil";
+import DecenaDeMil from "./DecenaDeMil";
+import UnidadDeMil from "./UnidadDeMil";
+import Centenas from "./Centenas";
+import Decenas from "./Decenas";
+import Unidades from "./Unidades";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
-const Home = () => {
+const Home = (props) => {
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="container mt-4">
+			<div className="row bg-dark">
+				<div className="col">
+					<button type="button" class="btn btn-dark"><i class="bi bi-clock-fill" style={{ fontSize: '125px' }}></i></button>
+
+				</div>
+				<div className="col">
+					<button type="button" class="btn btn-dark"><CentenaDeMil seconds={props.seconds} /></button>
+
+
+				</div>
+				<div className="col">
+					<button type="button" class="btn btn-dark">	<DecenaDeMil seconds={props.seconds} /></button>
+
+
+				</div>
+				<div className="col">
+					<button type="button" class="btn btn-dark">	<UnidadDeMil seconds={props.seconds} /></button>
+
+
+				</div>
+				<div className="col">
+					<button type="button" class="btn btn-dark"><Centenas seconds={props.seconds} /></button>
+
+
+				</div>
+				<div className="col">
+					<button type="button" class="btn btn-dark"><Decenas seconds={props.seconds} /></button>
+
+
+				</div>
+				<div className="col">
+					<button type="button" class="btn btn-dark"><Unidades seconds={props.seconds} /></button>
+
+				</div>
+
+			</div>
 		</div>
 	);
 };
